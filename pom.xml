@@ -200,6 +200,7 @@
   <pluginRepositories />
 
   <build>
+  <pluginManagement>
     <plugins>
       <!-- Compiles Java -->
       <plugin>
@@ -421,7 +422,19 @@
           <tagNameFormat>@{version}</tagNameFormat>
         </configuration>
       </plugin>
+      <plugin>
+  <artifactId>maven-failsafe-plugin</artifactId>
+  <executions>
+    <execution>
+      <goals>
+        <goal>integration-test</goal>
+        <goal>verify</goal>
+      </goals>
+    </execution>
+  </executions>
+</plugin>
     </plugins>
+    </pluginManagement>
   </build>
 
 </project>
